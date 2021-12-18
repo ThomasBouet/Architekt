@@ -27,17 +27,17 @@ func _ready():
 	_createProfilList([troops, TNode]);
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 # create
 # data [parent node, list, thread exit function signal]
 func _createProfilList(data):
-	var node = data[0];
-	var list = data[1];
+	var node = data[1];
+	var list = data[0];
 	for profil in list:
 		yield(get_tree(), "idle_frame");
 		var child = Profil.instance();
+		child.name = profil["Nom"];
 		node.call_deferred("add_child", child);
+		yield(get_tree(), "idle_frame");
+		child._setup(profil, false);
+		
 
