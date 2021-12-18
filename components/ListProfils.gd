@@ -10,6 +10,9 @@ var troops = [];
 # var a = 2
 # var b = "text"
 
+# TODO:
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -3,4 +3,5 @@
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [resource]
+Label/fonts/font = null
 PanelContainer/styles/panel = SubResource( 1 )
