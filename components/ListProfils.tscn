@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://themes/panelContainer.tres" type="Theme" id=1]
+[ext_resource path="res://components/ListProfils.gd" type="Script" id=2]
+
+[node name="ListContainer" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_right = 720.0
+margin_bottom = 1280.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 720.0
+margin_bottom = 1280.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_right = 720.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "Héros"
+align = 1
+valign = 1
+
+[node name="HeroesContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 720.0
+margin_bottom = 18.0
+alignment = 1
+
+[node name="ALabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 22.0
+margin_right = 720.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+text = "Alchimistes"
+align = 1
+valign = 1
+
+[node name="AlchemistsContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 40.0
+margin_right = 720.0
+margin_bottom = 40.0
+alignment = 1
+
+[node name="TLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 44.0
+margin_right = 720.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+text = "Troupes"
+align = 1
+valign = 1
+
+[node name="TroopsContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 62.0
+margin_right = 720.0
+margin_bottom = 62.0
+alignment = 1
