@@ -43,13 +43,13 @@ func _setup(profil, canAdd):
 	$"MarginContainer/VBoxContainer/Body/Mouvements/Course/HBoxContainer/Value".text = mvt[2];
 	
 	# competence
-	var comp = profil["Compétences"].replace("/","\r\n") if profil["Compétences"].find("-") == -1 else "";
+	var comp = profil["Compétences"].replace(",","\r\n") if profil["Compétences"].find("-") == -1 else "";
 	$"MarginContainer/VBoxContainer/Body/CompétencesFormules/Competence/Value".bbcode_text = comp;
 	if (comp == ""):
 		$"MarginContainer/VBoxContainer/Body/CompétencesFormules/Competence".visible = false;
 	
 	# formule
-	var form = profil["Compétences"].replace("/","\r\n") if !profil["Compétences"].find("-") == -1 else "";
+	var form = profil["Compétences"].replace(",","\r\n") if !profil["Compétences"].find("-") == -1 else "";
 	$"MarginContainer/VBoxContainer/Body/CompétencesFormules/Formules/Value".bbcode_text = form;
 	if (form == ""):
 		$"MarginContainer/VBoxContainer/Body/CompétencesFormules/Formules".visible = false; 
@@ -105,3 +105,10 @@ func _init_healthBar(list):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_PanelContainer_gui_input(event):
+	if (event is InputEventMouseButton):
+		if (event.pressed):
+			bodyVisible = !bodyVisible;
+			$"MarginContainer/VBoxContainer/Body".visible = bodyVisible;

@@ -1,6 +1,7 @@
 extends PanelContainer
 
 const Profil = preload("res://components/Carte.tscn");
+export var canAdd = false;
 var heroes = [];
 var alchemists = [];
 var troops = [];
@@ -27,7 +28,7 @@ func _ready():
 	_createProfilList([troops, TNode]);
 
 
-# create
+# create the list displayed
 # data [parent node, list, thread exit function signal]
 func _createProfilList(data):
 	var node = data[1];
@@ -38,6 +39,6 @@ func _createProfilList(data):
 		child.name = profil["Nom"];
 		node.call_deferred("add_child", child);
 		yield(get_tree(), "idle_frame");
-		child._setup(profil, false);
+		child._setup(profil, canAdd);
 		
 
